@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/MCB294_Bacteria_2022</p>
+</section>
+
+<section>
+    <h3>Physicists look at bacterial chemotaxis</h3>
+    <p>
+        <small>Aravi Samuel, 2022</small>
+    </p>
+                                        
+    <p> <img src=" assetsMCB/howardaravi.jpg " width="60%"> </p>
+    <p>
+        <small>Howard Berg (1934-2021)</small>
+    </p>
+</section>
+
+<!-- Leeuwenhoek  -->
+
+<section>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsMCB/Anthonie_van_Leeuwenhoek_(1632-1723)._Natuurkundige_te_Delft_Rijksmuseum_SK-A-957.jpeg" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <p align="left" style="font-size:25px">  
+             "In the year 1657, I discovered very small creatures living in rainwater." 
+        </p>
+        <p align="right" style="font-size:20px">  
+            Anthony von Leeuwenhoek <br>
+            1632-1723 <br>
+            Delft, Dutch Republic <br>
+        </p>
+        </div>
+    </div>
+</section>
+
+<!-- Vermeer  -->
+
+<section>
+    <p> Johannes Vermeer, 1632-1674, Delft</p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsMCB/AstronomerVermeer.jpg" width="100%">
+            <p align="center" style="font-size:20px">  
+                The Astronomer, 1668
+            </p>
+        </div>
+        <div class="column middle">
+            <p align="center" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsMCB/GeographerVermeer.jpg" width="100%">
+            <p align="center" style="font-size:20px">  
+                The Geographer, 1669
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Swimming Cells  -->
+
+
+
+<section>
+    <p> <em> Escherichia coli  </em> </p>
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB/swimmingbacteria.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Size matters </p> 
+        <img src="assetsMCB/Berg1988Figure1.png" width="80%">
+        <p align="center" style="font-size:25px">  
+            Comparison of the size of man, <em>E. coli,</em> and part of its flagellar motor. 
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Biased random walks </p> 
+        <img src="assetsMCB/Berg1988Figure2.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            Wild-type <em>E. coli</em> cell executing a random walk in a homogeneous medium. <br>
+            Planar projections of a 3D track
+        </p>
+</section>
+
+<section>
+    <p> Flagella rotate </p>
+    <p> <img src="assetsMCB/runtumbleraw.png " width="40%"> </p>
+    <p> <img src="assetsMCB/runtumble.png " width="40%"> </p>
+    <p> <small> CCW rotation &#8594; run <br> CW rotation &#8594; tumble </small></p>
+</section>
+
+<section>
+    <video loop controls='true' width='60%' height='60%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+    <p> <small> <em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far." </em> <br> -Howard Berg </small> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> The impulse response </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB/BergPhysicist2.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <br>
+            <li align="left" style="font-size:20px;color:black"> Change in CCW bias in response to puff of attractant </li> 
+            <li align="left" style="font-size:20px;color:black"> A change in bias of 0.23 caused by a change in 'fraction of receptor bound' of 0.0042. </li> 
+            <li align="left" style="font-size:20px;color:black"> Perfect adaptation </li> 
+        </div>
+    </div>
+</section>
+
+<section>
+    <p> Signal transduction from receptors to motors </p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB/Alon1.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <br>
+            <li align="left" style="font-size:20px;color:white"> A signaling cascade allows chemoreceptors to communicate with flagellar motors. </li> <br>
+            <li align="left" style="font-size:20px;color:white"> Negative feedback counteracts signaling to allow cells to adapt </li> <br>
+            <li align="left" style="font-size:20px;color:white"> When more attractant is bound, methyl groups are added to receptors by the enzyme CheR </li> <br>
+            <li align="left" style="font-size:20px;color:white"> When less attractant is bound, methyl groups are removed by the enzyme CheB </li> <br>
+        </div>
+    </div>
+</section>
+
+<section>
+    <p> Adaptation mutants </p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB/Alon1.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsMCB/Segall5.png" width="80%">
+            <p align="center" style="font-size:20px">  
+                 Impulse response (A, above) <br>
+                and step response (B, below) <br>
+                in strains deleted for <em>cheRcheB</em>  
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section data-background="#E3E3E3">
+    <p> The bacterial flagellar motor </p>
+    <p> <img src=" assetsMCB/WhadwaCartoonMotor.png " width="40%"> </p>
+    </section>
+<!-- The motor  -->
+
+<section data-background="#E3E3E3">
+    <div  style="position: absolute; top: 30px; left: 10%; width: 80%;">
+    <p> Fluctuation analysis of motor speed </p>
+        <img src=" assetsMCB/SamuelBergdata.png " >
+    </div>
+</section>
+
+<section data-background="#E3E3E3">
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Torque-generating units step independently </p>
+        <img src=" assetsMCB/SamuelBergFig2.png " >
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p data-id="C"> <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p data-id="C"> <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+        <p data-id="D"> <small>
+            \[ \left< n^2 \right> - \left< n \right> ^2 = \left< n \right> \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p data-id="C"> <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+        <p data-id="D"> <small>
+            \[ \left< n^2 \right> - \left< n \right> ^2 = \left< n \right> \]
+        </small> </p>
+        <p data-id="E"> <small>
+            \[ \therefore \phi=\frac{\left< \theta^2 \right> - \left< \theta \right> ^2}{\left< \theta \right>} \]
+        </small> </p>
+    </div>
+</section>
+<!-- Modern Structure  -->
+
+<section data-background="#FFFFFF">
+        <p> Cryo-electron microscopy of the rotor</p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsMCB/LeacryoSchematic.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsMCB/cryoEMrotor.png" width="60%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+        <p> Cryo-electron microscopy of the "stator"</p>
+    <div class="row">
+        <div class="column left">
+        <img src=" assetsMCB/LeacryoSchematic.png " >
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assetsMCB/LeaStator.png" width="50%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> ATP synthase </p>
+    <div  style="position: absolute; top: 60px; left: 0%; width: 40%;">
+        <img src=" assetsMCB/ATPsynthasestructure.png " >
+    </div>
+    <div  style="position: absolute; top: 160px; left: 60%; width: 40%;">
+        <video loop controls='true' width='60%' height='60%' src="assetsMCB/ATPsynthaselive.mp4" data-autoplay></video>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p>A model for torque generation and switching</p>
+    <p> <img src=" assetsMCB/testimagea.png "> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p><small> Polarized photobleaching &#8594; polarization-dependent fluorescence </small> </p>
+    <div  style="position: absolute; top: 100px; left: 15%; width: 70%;">
+        <p> <img src=" assetsMCB/polarizationmethod.png "> </p>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p><small> Polarized photobleaching &#8594; polarization-dependent fluorescence </small> </p>
+    <div  style="position: absolute; top: 100px; left: 15%; width: 70%;">
+        <p> <img src=" assetsMCB/polarizationringing.png "> </p>
+        <p> <small> Direct observation of C-ring rotation </small> </p>
+    </div>
+</section>
+<!-- Acknowledgments  -->
+				<section>
+					<p>Motivation</p>
+				        <p> <img src=" assetsMCB/BergLeeuwenhoek.png "> </p>
+                                        <p align="left"> <small> <em> "Is any of this knowledge practical? The reading of the external environment by cells of all types, leading to responses in growth or motility, is fundamental to life. Bacterial chemotaxis provides a model for learning how such processes can work. However this is not what has motivated me. I have wanted to know, simply, how such a tiny creature does its thing. How, for example, has it solved the problem of finding greener pastures within the constraints imposed by physics? This is a matter of curiosity. Curiosity is the driving force of basic science." </em> </small> </p>
+                                        <p align="right"> <small> -Howard Berg </small> </p>
+				</section>
+
+				<section>
+					<p>Acknowledgments</h2>
+					<div style="position: absolute; top: 60px; left: 0%; width: 30%;">
+				           <p> <img src=" assetsMCB/alina.jpg "> </p> 
+				           <p> <small> Alina Vrabioiu </small> </p> 
+                                        </div>
+					<div style="position: absolute; top: 60px; left: 40%; width: 20%;">
+				           <p> <img src=" assetsMCB/gabrielhosu.jpg "> </p> 
+				           <p> <small> Gabriel Hosu </small> </p> 
+                                        </div>
+					<div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+				           <img src=" assetsMCB/nsflogotrans.png "> 
+                                        </div>
+					<div style="position: absolute; top: 350px; left: 5%; width: 20%;">
+                                        </div>
+					<div style="position: absolute; top: 370px; left: 70%; width: 30%;">
+				           <img src=" assetsMCB/rowlandlogo.png "> 
+				           <p> <small> Rowland Institute at Harvard </small> </p> 
+                                        </div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
