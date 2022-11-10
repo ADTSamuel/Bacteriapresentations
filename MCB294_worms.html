@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/MCB294_Worms_2022</p>
+</section>
+
+<section>
+    <h3> The mind of the mating male </h3>
+    <p>
+        <small>Aravi Samuel, 2022</small>
+    </p>
+                                        
+    <p> <img src="assetsMCB2/theworms.png" width="60%"> </p>
+    <p>
+        <small> Circuit-wide functional organization of a multistep behavior </small>
+    </p>
+</section>
+
+<section>
+    <p> Whole-brain imaging </p> 
+        <img src="assetsMCB2/nmeth.2434_image.jpg" width="80%">
+</section>
+
+<section>
+    <p> Naturalistic behavior </p> 
+        <img src="assetsMCB2/behavioralstates.png" width="60%">
+        <p align="center" style="font-size:25px">  
+        Every mating is the same<br><br>
+        Every mating is different<br><br>
+        </p>
+</section>
+
+<section>
+    <p> Naturalistic behavior </p> 
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB2/mockturns.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> A two brained nervous system </p> 
+        <img src="assetsMCB2/fluorescentnervoussystemc.png" width="70%">
+    <div class="row">
+        <div class="column left">
+        <p align="center" style="font-size:25px">  
+            anterior <br>
+            $\sim$200 neurons
+        </p>
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <p align="center" style="font-size:25px">  
+            posterior <br>
+            $\sim$100 neurons
+        </p>
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> A connectome </p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB2/1b.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <img src="assetsMCB2/connectome.png" width="80%">
+        </div>
+    </div>
+</section>
+
+<section>
+        <img src="assetsMCB2/Elephant-e1520664929339.png" width="80%">
+</section>
+
+<section>
+    <p> Whole-brain imaging </p> 
+        <img src="assetsMCB2/microscope.png" width="60%">
+        <p align="center" style="font-size:25px">  
+        spinning disk confocal in a tracking environment<br>
+        10 brain volumes per second with multiple colors<br>
+        </p>
+</section>
+
+<section>
+    <p> Measuring brain and behavior </p> 
+        <img src="assetsMCB2/1c.png" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Cross-correlation and hierarchical clustering of seven whole-brain datasets </p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB2/2a.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <img src="assetsMCB2/2b.png" width="100%">
+        </div>
+    </div>
+</section>
+
+<section>
+    <p> Link clustering </p> 
+        <img src="assetsMCB2/2c.png" width="60%">
+</section>
+
+
+    </div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
