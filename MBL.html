@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/MBL_Bacteria2023</p>
+</section>
+				<section>
+					<h3>Bacterial chemotaxis</h3>
+					<p>
+						<small>Aravi Samuel, 2023</small>
+					</p>
+                                        
+				        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+					<p>
+						<small>Howard Berg (1934-2021)</small>
+					</p>
+				</section>
+
+
+<section>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsMCB/Anthonie_van_Leeuwenhoek_(1632-1723)._Natuurkundige_te_Delft_Rijksmuseum_SK-A-957.jpeg" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <p align="left" style="font-size:25px">  
+             "In the year 1657, I discovered very small creatures living in rainwater." 
+        </p>
+        <p align="right" style="font-size:20px">  
+            Anthony von Leeuwenhoek <br>
+            1632-1723 <br>
+            Delft, Dutch Republic <br>
+        </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <p> <em> Escherichia coli  </em> </p>
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB/swimmingbacteria.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Size matters </p> 
+        <img src="assetsMCB/Berg1988Figure1.png" width="80%">
+        <p align="center" style="font-size:25px">  
+            Comparison of the size of man, <em>E. coli,</em> and part of its flagellar motor. 
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Biased random walks </p> 
+        <img src="assetsMCB/Berg1988Figure2.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            Wild-type <em>E. coli</em> cell executing a random walk in a homogeneous medium. <br>
+            Planar projections of a 3D track
+        </p>
+</section>
+
+<section>
+    <p> Flagella rotate </p>
+    <p> <img src="assetsMCB/runtumbleraw.png " width="40%"> </p>
+    <p> <img src="assetsMCB/runtumble.png " width="40%"> </p>
+    <p> <small> CCW rotation &#8594; run <br> CW rotation &#8594; tumble </small></p>
+</section>
+
+<section>
+    <video loop controls='true' width='60%' height='60%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+    <p> <small> <em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far." </em> <br> -Howard Berg </small> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> The impulse response </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB/BergPhysicist2.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <br>
+            <li align="left" style="font-size:20px;color:black"> Change in CCW bias in response to puff of attractant </li> 
+            <li align="left" style="font-size:20px;color:black"> A change in bias of 0.23 caused by a change in 'fraction of receptor bound' of 0.0042. </li> 
+            <li align="left" style="font-size:20px;color:black"> Perfect adaptation </li> 
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Signal transduction minimized </p> 
+        <img src="assetsAmsterdam/signaltransductionminimized.png" width="80%">
+        <p align="center" style="font-size:25px">  
+            increase [cheY-P] &#8594 increase CW bias <br>
+            decrease [cheY-P] &#8594 decrease CW bias <br>
+        </p>
+</section>
+
+<section data-background="#E3E3E3">
+    <p> The bacterial flagellar motor </p>
+        <p> <img src=" assets/WhadwaCartoonMotor.png " width="40%"> </p>
+        <p align="center" style="font-size:25px">  
+            a puzzle of torque<br>
+            a puzzle of switching<br>
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An ultrasensitive motor </p> 
+        <img src="assetsAmsterdam/ultrasensitivecluzel.png" width="40%">
+        <p align="center" style="font-size:25px">  
+            solved a puzzle of gain<br>
+            created a puzzle of tuning<br></p> 
+
+            <p style="font-size:20px"> <span style="color:gray"> Cluzel et al. 2000 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An adaptive motor </p> 
+        <img src="assetsAmsterdam/YBadaptation.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            solved a puzzle of gain<br>
+            created a puzzle of tuning<br></p> 
+
+            <p style="font-size:20px"> <span style="color:gray"> Yuan et al. 2012 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An optogenetic inspiration</p> 
+        <img src="assetsAmsterdam/BoydenOptogenetics.png" width="70%">
+        <p style="font-size:20px"> <span style="color:gray"> Boyden, 2012 </span> </p> 
+</section>
+
+<section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinghighbias.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with high bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinglowbiaspng.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinglow.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinghigh.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with high bias </p> 
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic control of bias</p> 
+        <img src="assetsAmsterdam/biascalculations.png" width="40%"> 
+        <p style="font-size:25px"> Quantify response coefficients: $\frac{d \log{B}}{d \log{C}} \sim \frac{\Delta B/B}{\Delta c/c}$ </p> 
+</section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic control of bias</p> 
+        <img src="assetsAmsterdam/OwenHorowitz.png" width="80%"> 
+        <p style="font-size:25px"> The physics of sensitivity is a fundamental bound of classes of models <br></p> 
+        <p style="font-size:20px"> <span style="color:gray"> Owen and Horowitz, 2023  </span> </p> 
+
+</p> 
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic protein dimerization</p> 
+        <img src="assetsAmsterdam/LOVdimer.png" width="40%"> 
+        <p style="font-size:25px"> Light-induced conformational change near flavin <br>
+            of N-terminal cap of fungal photoreceptor Vivid <br>
+            &#8594 <span style="color:orange"> dimerization  </span> <br></p> 
+            <p style="font-size:20px"> <span style="color:gray"> Zoltowski et al 2008 </span> <br> </p> 
+
+
+</section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic magnets</p> 
+        <img src="assetsAmsterdam/OptogeneticMagnets.png" width="60%"> 
+        <p style="font-size:25px"> Protein engineering of electrostatic interactions creates <br>
+            blue light-activated positive and negative "magnets" <br></p>
+            <p style="font-size:20px"> <span style="color:gray"> Kawano et al 2015 </span> <br> </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Inactivation by sequestration </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration1.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> Active cheY-P pool in the cytoplasm &#8594 CW bias </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Inactivation by sequestration </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration2.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> <span style="color:blue"> Flash  </span> &#8594 inactive pool is membrane bound </p> 
+</section>
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic protein unfolding</p> 
+        <img src="assetsAmsterdam/Strickland2.png" width="50%">
+        <p style="font-size:25px"> Photoexcitation of <em>Avina sativa</em> phototropin 1 induces <br>
+            displacement and unfolding of J$\alpha$ domain <br></p> 
+            <p style="font-size:20px"> <span style="color:gray"> Strickland et al 2010  </span> </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Activation by unfolding </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration4.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> Inactive cheY-P pool caged by optogenetic protein </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Activation by unfolding </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration3.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> <span style="color:blue"> Flash </span> &#8594  Uncaged cheY-P &#8594 CW bias </p> 
+</section>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic Calibration </p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsAmsterdam/sequestrationcalibration1.png" width="100%">
+        <p style="font-size:25px"> As-phototropin cycles between fluorescent and non-fluorescent state </p> 
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <img src="assetsAmsterdam/sequestrationcalibration2.png" width="100%">
+        <p style="font-size:25px"> YPet quenching via FRET </p> 
+        </div>
+    </div>
+</section>
+
+<section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Manipulating and monitoring flagellar motor bias </p>
+        <img data-id="biasfigure" src="assetsAmsterdam/CCWbias.png" width="40%"> 
+        <p data-id="biastext" style="font-size:25px"> CW biased motors (tumbly cells) </p> 
+        <p style="font-size:20px"> <span style="color:gray"> Wolfe and Berg 1989  </span> </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Manipulating and monitoring flagellar motor bias </p>
+        <img data-id="biasfigure" src="assetsAmsterdam/CWbias.png" width="40%"> 
+        <p data-id="biastext" style="font-size:25px"> CCW biased motors (smooth swimming cells) </p> 
+        <p style="font-size:20px"> <span style="color:gray"> Wolfe and Berg 1989  </span> </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Manipulating and monitoring flagellar motor bias </p>
+        <img data-id="biasfigure" src="assetsAmsterdam/runningtumbling.png" width="40%"> 
+        <p data-id="biastext" style="font-size:25px"> running and tumbling cells </p> 
+        <p style="font-size:20px"> <span style="color:gray"> Wolfe and Berg 1989  </span> </p> 
+</section>
+
+<section data-auto-animate>
+    <p> Optogenetic swarm plates </p> 
+        <img data-id="optogeneticswarmfigure" src="assetsAmsterdam/Plate_setup_00.JPG" width="60%"> 
+</section>
+
+<section data-auto-animate>
+    <p> Optogenetic swarm plates </p> 
+        <img data-id="optogeneticswarmfigure" src="assetsAmsterdam/Plate_setup_02.JPG" width="60%"> 
+</section>
+
+<section>
+    <p> Optogenetic swarm plates </p> 
+    <video loop controls='true' width='100%' height='100%' src="assetsAmsterdam/gabrielexperiment.mp4" type='video/mp4' data-autoplay></video>
+</section>
+
+<section data-auto-animate>
+    <p> Optogenetic swarm plates </p> 
+        <img data-id="optogeneticswarmfigure" src="assetsAmsterdam/Plate_results_01.JPG" width="60%"> 
+        <p style="font-size:25px"> Free nMag-CheY-P-YPet &#8594 CW motors &#8594 tumbling cells &#8594  no swarming</p> 
+        <p style="font-size:25px"> <span style="color:cyan"> Blue light </span> &#8594  Sequestered nMag-CheY-P-YPet &#8594 running and tumbling &#8594 swarming</p> 
+</section>
+
+
+</section>
+
+
+<section>
+<section>
+    <p> Smooth swimming cells</p>
+	    <video loop controls='true' width='40%' height='40%' src="assetsAmsterdam/smoothcheYdeletion.mp4" type='video/mp4' data-autoplay></video>
+        <p style="font-size:25px"> $\Delta$CheY </p> 
+</section>
+
+<section>
+    <p> Tumbly cells</p>
+	    <video loop controls='true' width='40%' height='40%' src="assetsAmsterdam/tumblybacteriacheYnMag.mp4" type='video/mp4' data-autoplay></video>
+        <p style="font-size:25px"> nMag-CheY-P-YPet </p> 
+</section>
+
+<section>
+    <p> Tethered cells</p>
+	    <video loop controls='true' width='40%' height='40%' src="assetsAmsterdam/tetheredcellworks.mp4" type='video/mp4' data-autoplay></video>
+        <p style="font-size:25px"> nMag-CheY-P-YPet </p> 
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Cryo-electron microscopy</p>
+    <div class="row">
+        <div class="column left">
+            <img src="assets/LeacryoSchematic.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assets/LeaStator.png" width="40%">
+        </div>
+    </div>
+            <p style="font-size:20px"> <span style="color:gray"> Deme et al 2020<br> Santiveri et al 2020 </span> </p> 
+</section>
+
+<section data-background="#E3E3E3">
+    <div  style="position: absolute; top: 30px; left: 10%; width: 80%;">
+    <p> Fluctuation analysis of motor speed </p>
+        <img src=" assetsMCB/SamuelBergdata.png " >
+    </div>
+</section>
+
+<section data-background="#E3E3E3">
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Torque-generating units step independently </p>
+        <img src=" assetsMCB/SamuelBergFig2.png " >
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p data-id="C"> <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p data-id="C"> <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+        <p data-id="D"> <small>
+            \[ \left< n^2 \right> - \left< n \right> ^2 = \left< n \right> \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 30px; left: 15%; width: 70%;">
+        <p> Variance predicts numbers of steps  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p data-id="A"> <small>
+            \[ \theta = \phi \times n \]
+        </small> </p>
+        <p data-id="B"> <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p data-id="C"> <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+        <p data-id="D"> <small>
+            \[ \left< n^2 \right> - \left< n \right> ^2 = \left< n \right> \]
+        </small> </p>
+        <p data-id="E"> <small>
+            \[ \therefore \phi=\frac{\left< \theta^2 \right> - \left< \theta \right> ^2}{\left< \theta \right>} \]
+        </small> </p>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Cryo-electron microscopy</p>
+    <div class="row">
+        <div class="column left">
+            <img src="assets/LeacryoSchematic.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assets/LeaStator.png" width="40%">
+        </div>
+    </div>
+            <p style="font-size:20px"> <span style="color:gray"> Deme et al 2020<br> Santiveri et al 2020 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p> ATP synthase </p>
+    <div class="row">
+        <div class="column left">
+            <img src=" assets/ATPsynthasestructure.png " width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+	    <video loop controls='true' width='100%' height='100%' src="assetsAmsterdam/ATPsynthase.mp4" type='video/mp4' data-autoplay></video>
+        </div>
+    </div>
+</section>
+
+<section data-background="#000000">
+    <p>A model for torque generation and switching</p>
+       <img src="assets/testimagea.png" width='80%'>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p style="font-size:25px"> Polarized photobleaching &#8594; polarization-dependent fluorescence </p> 
+        <img src="assets/polarizationmethod.png" width='60%'>
+            <p style="font-size:20px"> <span style="color:gray"> Hosu et al 2017 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p style="font-size:25px"> Polarized photobleaching &#8594; polarization-dependent fluorescence </p> 
+        <img src="assets/polarizationringing.png" width='60%'>
+            <p style="font-size:20px"> <span style="color:gray"> Hosu et al 2017 </span> </p> 
+</section>
+</section>
+
+				<section>
+					<p>Motivation</p>
+				        <p> <img src=" assetsMCB/BergLeeuwenhoek.png "> </p>
+                                        <p align="left"> <small> <em> "Is any of this knowledge practical? The reading of the external environment by cells of all types, leading to responses in growth or motility, is fundamental to life. Bacterial chemotaxis provides a model for learning how such processes can work. However this is not what has motivated me. I have wanted to know, simply, how such a tiny creature does its thing. How, for example, has it solved the problem of finding greener pastures within the constraints imposed by physics? This is a matter of curiosity. Curiosity is the driving force of basic science." </em> </small> </p>
+                                        <p align="right"> <small> -Howard Berg </small> </p>
+				</section>
+
+
+<!-- Acknowledgments  -->
+
+<section>
+				<section>
+					<p>Acknowledgments</p>
+					<div style="position: absolute; top: 60px; left: 0%; width: 30%;">
+				           <p> <img src=" assets/alina.jpg "> </p> 
+				           <p> <small> Alina Vrabioiu </small> </p> 
+                                        </div>
+					<div style="position: absolute; top: 60px; left: 40%; width: 20%;">
+				           <p> <img src=" assets/gabrielhosu.jpg "> </p> 
+				           <p> <small> Gabriel Hosu </small> </p> 
+                                        </div>
+					<div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+				           <img src=" assets/nsflogotrans.png "> 
+                                        </div>
+					<div style="position: absolute; top: 370px; left: 70%; width: 30%;">
+				           <img src=" assets/rowlandlogo.png "> 
+				           <p> <small> Rowland Institute at Harvard </small> </p> 
+                                        </div>
+				</section>
+<section>
+<p>References</p>
+    <p align="left" style="font-size:15px"> E. S. Boyden, “A history of optogenetics: The development of tools for controlling brain circuits with light,” F1000 biology reports, vol. 3, pp. 11–11, 2011.</p> 
+
+    <p align="left" style="font-size:15px"> P. Cluzel, M. Surette, and S. Leibler, “An ultrasensitive bacterial motor revealed by monitoring signaling proteins in single cells,” Science, vol. 287, no. 5458, pp. 1652–1655, 2000.  </p> 
+
+    <p align="left" style="font-size:15px"> J. C. Deme, S. Johnson, O. Vickery, A. Muellbauer, H. Monkhouse, T. Griffiths, R. H. James, B. C. Berks, J. W. Coulton, P. J. Stansfeld, and S. M. Lea, “Structures of the stator complex that drives rotation of the bacterial flagellum,” Nature Microbiology, vol. 5, no. 12, pp. 1553–1564, 2020.</p> 
+
+    
+    <p align="left" style="font-size:15px"> B. G. Hosu, V. S. J. Nathan, and H. C. Berg, “Internal and external components of the bacterial flagellar motor rotate as a unit,” Proceedings of the National Academy of Sciences, vol. 113, no. 17, pp. 4783–4787, 2016.  </p> 
+
+    <p align="left" style="font-size:15px"> F. Kawano, H. Suzuki, A. Furuya, and M. Sato, “Engineered pairs of distinct photoswitches for optogenetic control of cellular proteins,” Nature Communications, vol. 6, no. 1, pp. 6256– 6256, 2015.  </p> 
+
+    <p align="left" style="font-size:15px"> J. A. Owen and J. M. Horowitz, “Size limits the sensitivity of kinetic schemes,” Nature Communications, vol. 14, no. 1, pp. 1280–1280, 2023.  </p> 
+
+    <p align="left" style="font-size:15px"> M. Santiveri, A. Roa-Eguiara, C. Kühne, N. Wadhwa, H. Hu, H. C. Berg, M. Erhardt, and N. M. Taylor, “Structure and function of stator units of the bacterial flagellar motor,” Cell, vol. 183, no. 1, 244–257.e16, 2020.  </p> 
+
+    <p align="left" style="font-size:15px"> D. Strickland, X. Yao, G. Gawlak, M. K. Rosen, K. H. Gardner, and T. R. Sosnick, “Rationally improving LOV domain-based photoswitches,” Nature Methods, vol. 7, no. 8, pp. 623–626, 2010.  </p> 
+
+    <p align="left" style="font-size:15px"> A. J. Wolfe and H. C. Berg, “Migration of bacteria in semisolid agar,” Proceedings of the National Academy of Sciences, vol. 86, no. 18, pp. 6973–6977, 1989.  </p> 
+
+    <p align="left" style="font-size:15px"> J. Yuan, R. W. Branch, B. G. Hosu, and H. C. Berg, “Adaptation at the output of the chemotaxis signalling pathway,” Nature, vol. 484, no. 7393, 233–U115, 2012.</p> 
+
+    <p align="left" style="font-size:15px"> B. D. Zoltowski and B. R. Crane, “Light Activation of the LOV Protein Vivid Generates a Rapidly Exchanging Dimer,” Biochemistry, vol. 47, no. 27, pp. 7012–7019, 2008.
+
+</section>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
