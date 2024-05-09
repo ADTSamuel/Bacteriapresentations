@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/CBSRetreat2024SamuelLab</p>
+</section>
+				<section>
+					<h3>Bacterial chemotaxis</h3>
+					<p>
+						<small>Aravi Samuel</small>
+					</p>
+                                        
+				        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+					<p>
+						<small>Howard Berg (1934-2021)</small>
+					</p>
+				</section>
+
+
+<section>
+    <p> <em> Escherichia coli  </em> </p>
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB/swimmingbacteria.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Biased random walks </p> 
+        <img src="assetsMCB/Berg1988Figure2.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            Wild-type <em>E. coli</em> cell executing a random walk in a homogeneous medium. <br>
+            Planar projections of a 3D track
+        </p>
+</section>
+
+<section>
+    <p> Flagella rotate </p>
+    <p> <img src="assetsMCB/runtumbleraw.png " width="40%"> </p>
+    <p> <img src="assetsMCB/runtumble.png " width="40%"> </p>
+    <p> <small> CCW rotation &#8594; run <br> CW rotation &#8594; tumble </small></p>
+</section>
+
+<section>
+    <video loop controls='true' width='60%' height='60%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+    <p> <small> <em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far." </em> <br> -Howard Berg </small> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> The impulse response </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB/BergPhysicist2.png" width="100%">
+        <p align="center" style="font-size:20px;color:black"> Change in CCW bias in response to attractant puff </p> 
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <br>
+            <p align="center" style="font-size:20px;color:black"> Small change in 'fraction of bound receptor' <br>
+                (0.0042) <br>
+                &#8595 <br>
+                Large change in bias <br>
+                (0.23) </p> <br>
+            <p align="center" style="font-size:20px;color:black"> Perfect adaptation <br>
+                <em> and  </em> <br>
+                High gain </p> <br>
+        </div>
+    </div>
+</section>
+
+<section data-background="#DCDCDC">
+    <p> Signal transduction </p> 
+        <img src="assets/Alon1.png" width="40%">
+        <p align="center" style="font-size:25px">  
+            increase [cheY-P] &#8594 increase CW bias <br>
+            decrease [cheY-P] &#8594 decrease CW bias <br>
+        </p>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> An ultrasensitive motor </p> 
+        <img src="assetsAmsterdam/ultrasensitivecluzel.png" width="40%">
+        <p align="center" style="font-size:25px">  
+            solved a puzzle of gain<br>
+            created a puzzle of tuning<br></p> 
+
+            <p style="font-size:20px"> <span style="color:gray"> Cluzel et al. 2000 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An adaptive motor </p> 
+        <img src="assetsAmsterdam/YBadaptation.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            solved a puzzle of gain<br>
+            created a puzzle of tuning<br></p> 
+
+            <p style="font-size:20px"> <span style="color:gray"> Yuan et al. 2012 </span> </p>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> An optogenetic inspiration</p> 
+        <img src="assetsAmsterdam/BoydenOptogenetics.png" width="50%">
+        <p style="font-size:20px"> <span style="color:gray"> Boyden, 2012 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinghighbias.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with high bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinglowbiaspng.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinglow.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinghigh.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with high bias </p> 
+</section>
+</section>
+
+<section>
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic protein dimerization</p> 
+        <img src="assetsAmsterdam/LOVdimer.png" width="40%"> 
+        <p style="font-size:25px"> Light-induced conformational change near flavin <br>
+            of N-terminal cap of fungal photoreceptor Vivid <br>
+            &#8594 <span style="color:orange"> dimerization  </span> <br></p> 
+            <p style="font-size:20px"> <span style="color:gray"> Zoltowski et al 2008 </span> <br> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic magnets</p> 
+        <img src="assetsAmsterdam/OptogeneticMagnets.png" width="60%"> 
+        <p style="font-size:25px"> Protein engineering of electrostatic interactions creates <br>
+            blue light-activated positive and negative "magnets" <br></p>
+            <p style="font-size:20px"> <span style="color:gray"> Kawano et al 2015 </span> <br> </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Lower [CheY-P] by sequestration </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration1.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> Active cheY-P pool in the cytoplasm &#8594 CW bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Lower [CheY-P] by sequestration </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration2.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> <span style="color:blue"> Flash  </span> &#8594 inactive pool is sequestered </p> 
+</section>
+
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic protein uncaging</p> 
+        <img src="assetsAmsterdam/Strickland2.png" width="50%">
+        <p style="font-size:25px"> Photoexcitation of <em>Avena sativa</em> phototropin 1 induces <br>
+            displacement and unfolding of J$\alpha$ domain <br></p> 
+            <p style="font-size:20px"> <span style="color:gray"> Strickland et al 2010  </span> </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Caged CheY </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration4.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> Inactive cheY-P pool caged by optogenetic protein </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Caged CheY </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration3.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> <span style="color:blue"> Flash </span> &#8594  Uncaged cheY-P &#8594 CW bias </p> 
+</section>
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+        <img src="assets/CHEY_pMag_mYPET.png" width="30%">
+        <p style="font-size:25px"> <span style="color:blue"> CheY </span> - <span style="color:red"> pMag </span> - <span style="color:green"> mYPET  </span> </p> 
+</section>
+<section data-background="#FFFFFF">
+        <img src="assets/mSCARLET-nMAG-CAD.png" width="30%">
+        <p style="font-size:25px"> <span style="color:red"> mScarlet </span> - <span style="color:green"> nMag </span> - CAD </p> 
+</section>
+<section data-background="#FFFFFF">
+        <img src="assets/CamKIIa.png" width="50%">
+        <p style="font-size:25px"> CAD domains will form a dodecameric sequestering scaffold </p> 
+</section>
+<section data-background="#FFFFFF">
+        <img src="assets/FRET.jpg" width="50%">
+        <p style="font-size:25px"> Light-activated dimerization </p> 
+</section>
+<section data-background="#FFFFFF">
+        <img src="assets/MeanStandardError.png" width="50%">
+        <p style="font-size:25px"> Light-activated dimerization &#8594 sequestration &#8594 lower CW bias  </p> 
+</section>
+</section>
+
+<section>
+
+<section data-background="#FFFFFF">
+        <img src="assets/CagedCheY.png" width="20%">
+        <p align="center" style="font-size:25px">  
+            <span style="color:magenta"> AsLOV2 </span> - <span style="color:red"> FliM </span> - <span style="color:blue"> CheY  </span> 
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+        <img src="assets/Uncaging2.bmp" width="50%">
+        <p style="font-size:25px"> Light-activated uncaging &#8594 higher CW bias  </p> 
+</section>
+</section>
+
+
+				<section>
+					<p>Motivation</p>
+				        <p> <img src=" assetsMCB/BergLeeuwenhoek.png "> </p>
+                                        <p align="left"> <small> <em> "Is any of this knowledge practical? The reading of the external environment by cells of all types, leading to responses in growth or motility, is fundamental to life. Bacterial chemotaxis provides a model for learning how such processes can work. However this is not what has motivated me. I have wanted to know, simply, how such a tiny creature does its thing. How, for example, has it solved the problem of finding greener pastures within the constraints imposed by physics? This is a matter of curiosity. Curiosity is the driving force of basic science." </em> </small> </p>
+                                        <p align="right"> <small> -Howard Berg </small> </p>
+				</section>
+
+
+<!-- Acknowledgments  -->
+
+<section>
+    <p>Acknowledgments</p>
+        <div style="position: absolute; top: 60px; left: 0%; width: 30%;">
+            <p> <img src=" assets/alina.jpg "> </p> 
+            <p> <small> Alina Vrabioiu </small> </p> 
+        </div>
+        <div style="position: absolute; top: 400px; left: 0%; width: 20%;">
+            <p> <img src="assets/nsflogotrans.png"> </p> 
+        </div>
+        <div style="position: absolute; top: 460px; left: 25%; width: 40%;">
+            <p align="left"> <small> 
+                <span style="color:yellow"> Dean's Competitive Fund, Harvard  </span> 
+            </small> </p> 
+            <p align="left"> <small> 
+                <span style="color:yellow"> Chris Stubbs  </span> 
+            </small> </p> 
+        </div>
+
+        <div style="position: absolute; top: 60px; left: 40%; width: 20%;">
+            <p> <img src=" assets/gabrielhosu.jpg "> </p> 
+            <p> <small> Gabriel Hosu </small> </p> 
+        </div>
+            <div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+            <p align="left">  <small>
+                David Zimmerman<br>
+                Haoru Li <br>
+                Stan Lazopulo<br><br>
+                Helena Casademunt<br>
+                Core Park<br>
+                Ishaan Chandok<br><br>
+                Rafael Jacobsen<br>
+                William Fredenberg <br>
+                João van der Ven<br>
+                Sophia Kim<br>
+                Dominic Lehane <br>
+    </small> </p> 
+    </div>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
