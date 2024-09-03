@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 45%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 45%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/Physics95_2024</p>
+</section>
+				<section>
+					<h3>Bacterial chemotaxis</h3>
+				        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+					<p>
+						<small>Aravi Samuel, Howard Berg</small>
+					</p>
+				</section>
+
+
+<section>
+    <p> <em> Escherichia coli  </em> </p>
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB/swimmingbacteria.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Biased random walks </p> 
+        <img src="assetsMCB/Berg1988Figure2.png" width="50%">
+        <p align="center" style="font-size:20px">  
+            <span style="color:gray"> Berg and Brown, 1972  </span> 
+        </p>
+</section>
+
+<section>
+    <p> Flagella rotate </p>
+    <p> <img src="assetsMCB/runtumbleraw.png " width="40%"> </p>
+    <p> <img src="assetsMCB/runtumble.png " width="40%"> </p>
+    <p> <small> CCW rotation &#8594; run <br> CW rotation &#8594; tumble </small></p>
+</section>
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+        <p align="center" style="font-size:20px">  
+<em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far."  </em> <br>
+            <span style="color:gray"> Berg and Brown, 1972  </span> 
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> The impulse response </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsMCB/BergPhysicist2.png" width="90%">
+        <p align="center" style="font-size:20px;color:black"> Change in CCW bias in response to attractant puff </p> 
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <br>
+            <p align="center" style="font-size:20px;color:black"> Small change in 'fraction of bound receptor' <br>
+                (0.0042) <br>
+                &#8595 <br>
+                Large change in bias <br>
+                (0.23) </p> <br>
+            <p align="center" style="font-size:20px;color:black"> Perfect adaptation <br>
+                <em> and  </em> <br>
+                High gain </p> <br>
+        </div>
+    </div>
+        <p align="center" style="font-size:20px">  
+            <span style="color:gray"> Block, Segall, and Berg, 1982  </span> 
+        </p>
+</section>
+
+<section data-background="#DCDCDC">
+    <p> Signal transduction </p> 
+        <img src="assets/Alon1.png" width="40%">
+        <p align="center" style="font-size:20px">  
+            increase [cheY-P] &#8594 increase CW bias <br>
+            decrease [cheY-P] &#8594 decrease CW bias <br>
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Signal transduction observed </p> 
+        <img src="assets/SourjikFret.png" width="80%">
+        <p style="font-size:20px"> <span style="color:gray"> Sourjik and Berg, 2002 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An ultrasensitive motor </p> 
+        <img src="assetsAmsterdam/ultrasensitivecluzel.png" width="40%">
+            <p style="font-size:20px"> <span style="color:gray"> Cluzel et al. 2000 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An adaptive motor </p> 
+        <img src="assetsAmsterdam/YBadaptation.png" width="50%">
+            <p style="font-size:20px"> <span style="color:gray"> Yuan et al. 2012 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> An optogenetic inspiration</p> 
+        <img src="assetsAmsterdam/BoydenOptogenetics.png" width="50%">
+        <p style="font-size:20px"> <span style="color:gray"> Boyden, 2012 </span> </p> 
+</section>
+
+<section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinghighbias.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with high bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinglowbiaspng.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinglow.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinghigh.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with high bias </p> 
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic protein uncaging</p> 
+        <img src="assetsAmsterdam/Strickland2.png" width="50%">
+        <p style="font-size:25px"> Photoexcitation of <em>Avena sativa</em> phototropin 1 induces <br>
+            displacement and unfolding of J$\alpha$ domain <br></p> 
+            <p style="font-size:20px"> <span style="color:gray"> Strickland et al 2010  </span> </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Caged CheY </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration4.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> Inactive cheY-P pool caged by optogenetic protein </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Caged CheY </p> 
+        <img data-id="sequestrationfigure" src="assetsAmsterdam/sequestration3.png" width="60%"> 
+        <p data-id="sequestrationtext" style="font-size:25px"> <span style="color:blue"> Flash </span> &#8594  Uncaged cheY-P &#8594 CW bias </p> 
+</section>
+</section>
+
+<section>
+
+<section data-background="#FFFFFF">
+        <img src="assetsAlina/image1.png" width="40%">
+</section>
+
+<section data-background="#FFFFFF">
+        <img src="assetsAlina/reactionuncaging.png" width="50%">
+        <p style="font-size:25px"> Blue light &#8594 uncaging &#8594 active CheY </p> 
+        <p style="font-size:25px"> Dark &#8594 re-caging &#8594 inactive CheY </p> 
+</section>
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assets/output.mp4 " data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+        <p style="font-size:25px"> A new impulse response measurement </p> 
+        <img src="assetsAlina/newimpulse.png" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+    <div class="row">
+        <div class="column left">
+            <video loop controls='true' width='50%' height='50%' src="assetsAlina/output.mp4" data-autoplay></video>
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <img src="assetsAlina/measurements.png" width="100%">
+        </div>
+    </div>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Components of the impulse response  </p> 
+        <img src="assetsAlina/newdatahists.png" width="80%">
+</section>
+</section>
+
+<!-- Acknowledgments  -->
+
+<section>
+    <p>Acknowledgments</p>
+        <div style="position: absolute; top: 60px; left: 0%; width: 30%;">
+            <p> <img src=" assets/alina.jpg "> </p> 
+            <p> <small> Alina Vrabioiu </small> </p> 
+        </div>
+        <div style="position: absolute; top: 400px; left: 0%; width: 20%;">
+            <p> <img src="assets/nsflogotrans.png"> </p> 
+        </div>
+        <div style="position: absolute; top: 460px; left: 25%; width: 40%;">
+            <p align="left"> <small> 
+                <span style="color:yellow"> Dean's Competitive Fund, Harvard  </span> 
+            </small> </p> 
+            <p align="left"> <small> 
+                <span style="color:yellow"> Chris Stubbs  </span> 
+            </small> </p> 
+        </div>
+
+        <div style="position: absolute; top: 60px; left: 40%; width: 20%;">
+            <p> <img src=" assets/gabrielhosu.jpg "> </p> 
+            <p> <small> Gabriel Hosu </small> </p> 
+        </div>
+            <div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+            <p align="left">  <small>
+                David Zimmerman<br>
+                Haoru Li <br>
+                Stan Lazopulo<br><br>
+                Helena Casademunt<br>
+                Core Park<br>
+                Ishaan Chandok<br><br>
+                Rafael Jacobsen<br>
+                William Fredenberg <br>
+                João van der Ven<br>
+                Sophia Kim<br>
+                Dominic Lehane <br>
+    </small> </p> 
+    </div>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
