@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 55%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 35%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/SamuelNeurophotonics2025 </p>
+</section>
+				<section>
+					<h3>Bacterial Chemotaxis</h3>
+					<p>
+						<small>Aravi Samuel, 2023</small>
+					</p>
+                                        
+				        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+						<small>Howard Berg (1934-2021)</small>
+					</p>
+				</section>
+
+<section>
+        <img src="assets/delbruck.jpg" width="40%">
+    <p> <small> <em> "I would study bacteria, but I don't know how to tame them." </em> <br> -Max Delbr&#252;ck </small> </p>
+</section>
+
+<section>
+    <p> <em> Escherichia coli  </em> </p>
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB/swimmingbacteria.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Biased random walks </p> 
+        <img src="assetsMCB/Berg1988Figure2.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            Wild-type <em>E. coli</em> cell executing a random walk in a homogeneous medium. <br>
+            Planar projections of a 3D track
+        </p>
+</section>
+
+<section>
+    <p> Flagella rotate </p>
+    <p> <img src="assetsMCB/runtumbleraw.png " width="40%"> </p>
+    <p> <img src="assetsMCB/runtumble.png " width="40%"> </p>
+    <p> <small> CCW rotation &#8594; run <br> CW rotation &#8594; tumble </small></p>
+</section>
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+        <p align="center" style="font-size:20px">  
+<em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far."  </em> <br>
+            <span style="color:gray"> Berg and Brown, 1972  </span> 
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> The impulse response </p> 
+        <img src="assetsMCB/BergPhysicist2.png" width="50%">
+        <p align="center" style="font-size:20px">  
+            <p align="center" style="font-size:20px;color:black"> Small change in 'bound receptor' (0.0042) &#8594  Large change in bias (0.23) <br><br>
+            <span style="color:gray"> Block, Segall, and Berg, 1982  </span> 
+        </p>
+</section>
+
+<section data-background="#DCDCDC">
+    <p> Signal transduction </p> 
+        <img src="assets/Alon1.png" width="40%">
+        <p align="center" style="font-size:20px">  
+            increase [cheY-P] &#8594 increase CW bias <br>
+            decrease [cheY-P] &#8594 decrease CW bias <br>
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Signal transduction observed </p> 
+        <img src="assets/SourjikFret.png" width="80%">
+        <p style="font-size:20px"> <span style="color:gray"> Sourjik and Berg, 2002 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Signal amplification by ultrasensitivity </p> 
+        <img src="assetsAmsterdam/ultrasensitivecluzel.png" width="40%">
+            <p style="font-size:20px"> <span style="color:gray"> Cluzel et al. 2000 </span> </p>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetics?</p> 
+        <img src="assetsAmsterdam/BoydenOptogenetics.png" width="50%">
+        <p style="font-size:20px"> <span style="color:gray"> Boyden, 2012 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinghighbias.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with high bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinglowbiaspng.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinglow.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Optogenetic control of bias</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinghigh.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with high bias </p> 
+</section>
+</section>
+
+
+<section>
+<section data-background="#000000">
+    <p> <em> Avena sativa </em> </p> 
+        <img src="assetsAlina/avenasativa.jpeg" width="50%">
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Phototropin 1 </p> 
+        <img data-id="folding" src="assetsAlina/folded2.png" width="50%"> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Phototropin 1 </p> 
+        <img data-id="folding" src="assetsAlina/unfolded.png" width="50%"> 
+</section>
+</section>
+
+
+<section>
+
+<section data-background="#FFFFFF">
+    <p> AlphaFold </p> 
+        <img src="assetsAlina/image1.png" width="40%">
+</section>
+<section data-background="#FFFFFF">
+        <img src="assetsAlina/reactionuncaging.png" width="50%">
+        <p style="font-size:25px"> Blue light &#8594 uncaging &#8594 active CheY </p> 
+        <p style="font-size:25px"> Dark &#8594 re-caging &#8594 inactive CheY </p> 
+</section>
+
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assets/output.mp4 " data-autoplay></video>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic impulse response </p> 
+        <img src="assetsAlina/pulsetrain.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic impulse response </p> 
+        <img src="assetsAlina/impulseresponse.png" width="60%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Dissecting the impulse response  </p> 
+        <video loop controls='true' width='20%' height='20%' src="assetsAlina/output.mp4" data-autoplay></video>
+        <img src="assetsAlina/latency:duration.jpg" width="80%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Response duration </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsAlina/duration.jpg" width="100%">
+        </div>
+        <div class="column right">
+                <p align="left" style="font-size:25px"> One-step reaction: \[ \space \text{CCW} \space \xrightarrow{k}  \text{CW}   \] </p>
+                <p align="left" style="font-size:25px"> Poisson interval distribution: \[ \space p(t) = ke^{-kt} \] </p>
+        </div>
+    </div>
+</section>
+<section data-background="#FFFFFF">
+    <p> Response latency </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsAlina/latency.jpg" width="100%">
+        </div>
+        <div class="column right">
+                <p align="left" style="font-size:25px"> Multi-step reaction: \[ \text{CCW} \rightarrow \left[ 1 \xrightarrow{k} 2 \xrightarrow{k} ... \xrightarrow{k} N \right] \rightarrow  \text{CW}   \] </p>
+                <p align="left" style="font-size:25px"> Gamma distribution: \[ \space p(t) = \frac{k^N t^{N-1}}{\Gamma(N)}e^{-kt} \] </p>
+        </div>
+    </div>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+        <img src="assetsAlina/hecht.png" width="80%">
+        <img src="assetsAlina/apparatus.png" width="60%">
+</section>
+<section data-background="#FFFFFF">
+    <p> Poisson statistics</p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsAlina/probabilityofseeingcurves.png" width="100%">
+        </div>
+        <div class="column right">
+                <p align="left" style="font-size:20px"> Let $a$ be the average number of quantal responses per flash </p>
+                <p align="left" style="font-size:20px"> Poisson statistics gives the probability that the flash yields exactly $n$ quanta: \[ P_n = \frac{a^n e^{-a}}{n!} \] </p>
+                <p align="left" style="font-size:20px"> The Probability of Seeing is the probability that the number of quanta exceeds a threshold $\theta$: \[ P_{see}=\sum_{k=\theta}^{\infty} P_k \] </p>
+        </div>
+    </div>
+</section>
+<section data-background="#FFFFFF">
+    <p> Threshold for seeing </p> 
+        <img src="assetsAlina/hechtdata.png" width="80%">
+</section>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Probability of seeing for the bacterial flagellar motor </p> 
+        <img src="assetsAlina/PseeHillfit.jpg" width="60%">
+</section>
+
+<section>
+<p>Motivation</p>
+<p> <img src=" assetsMCB/BergLeeuwenhoek.png "> </p>
+<p align="left" data-id="howardtext"> <small> <em> "Is any of this knowledge practical? The reading of the external environment by cells of all types, leading to responses in growth or motility, is fundamental to life. Bacterial chemotaxis provides a model for learning how such processes can work. 
+<span style="color:yellow"> However this is not what has motivated me. I have wanted to know, simply, how such a tiny creature does its thing...  This is a matter of curiosity. Curiosity is the driving force of basic science."  </span> 
+</em> </small> </p>
+</section>
+
+<section>
+    <p>Acknowledgments</p>
+        <div style="position: absolute; top: 60px; left: 0%; width: 30%;">
+            <p> <img src=" assets/alina.jpg "> </p> 
+            <p> <small> Alina Vrabioiu </small> </p> 
+        </div>
+        <div style="position: absolute; top: 400px; left: 0%; width: 20%;">
+            <p> <img src="assets/nsflogotrans.png"> </p> 
+        </div>
+        <div style="position: absolute; top: 460px; left: 25%; width: 40%;">
+            <p align="left"> <small> 
+                <span style="color:yellow"> Dean's Competitive Fund, Harvard  </span> 
+            </small> </p> 
+            <p align="left"> <small> 
+                <span style="color:yellow"> Chris Stubbs, Jeff Lichtman </span> 
+            </small> </p> 
+        </div>
+
+        <div style="position: absolute; top: 60px; left: 40%; width: 20%;">
+            <p> <img src=" assets/gabrielhosu.jpg "> </p> 
+            <p> <small> Gabriel Hosu </small> </p> 
+        </div>
+            <div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+            <p align="left">  <small>
+                David Zimmerman<br>
+                Stan Lazopulo<br><br>
+                Helena Casademunt<br>
+                Core Park<br>
+                Ishaan Chandok<br><br>
+                Rafael Jacobsen<br>
+                Sophia Kim<br><br><br>
+                <span style="color:orange"> Philippe Cluzel<br> </span> 
+    </small> </p> 
+    </div>
+</section>
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
