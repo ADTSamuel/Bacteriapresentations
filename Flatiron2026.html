@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 55%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 35%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<!-- Title Slide -->
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/SamuelFlatiron2025 </p>
+</section>
+				<section>
+					<h3>Bacterial Chemotaxis</h3>
+					<p>
+						<small>Aravi Samuel</small>
+					</p>
+                                        
+				        <p> <img src=" assets/howardaravi.jpg " width="60%"> </p>
+						<small>Howard Berg (1934-2021)</small>
+					</p>
+				</section>
+
+<section>
+        <img src="assets/delbruck.jpg" width="40%">
+    <p> <small> <em> "I would study bacteria, but I don't know how to tame them." </em> <br> -Max Delbr&#252;ck </small> </p>
+</section>
+
+<section>
+<section>
+    <p> <em> Escherichia coli  </em> </p>
+    <video loop controls='true' width='60%' height='60%' src="assetsMCB/swimmingbacteria.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Biased random walks </p> 
+        <img src="assetsMCB/Berg1988Figure2.png" width="50%">
+        <p align="center" style="font-size:25px">  
+            <em>E. coli</em> performing a random walk. <br>
+            Planar projections of a 3D track
+        </p>
+</section>
+
+<section>
+    <p> Flagella rotate </p>
+    <p> <img src="assetsMCB/runtumbleraw.png " width="40%"> </p>
+    <p> <img src="assetsMCB/runtumble.png " width="40%"> </p>
+    <p> <small> CCW rotation &#8594; run <br> CW rotation &#8594; tumble </small></p>
+</section>
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+        <p align="center" style="font-size:20px">  
+<em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far."  </em> <br>
+            <span style="color:gray"> Berg and Brown, 1972  </span> 
+        </p>
+</section>
+</section>
+
+<section>
+    <p> Part 1: Motor mechanics </p> 
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> <img src="assetsOxbridge/Svoboda1.png" width="80%"> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> <img src="assetsOxbridge/Svoboda2.png" width="60%"> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> <img src="assetsOxbridge/Svoboda3.png" width="50%"> </p>
+</section>
+</section>
+
+<section>
+<section data-background="#E3E3E3">
+    <p> The flagellar motor </p>
+        <p> <img src=" assets/WhadwaCartoonMotor.png " width="40%"> </p>
+</section>
+
+<section data-background="#E3E3E3">
+    <div  style="position: absolute; top: 30px; left: 10%; width: 80%;">
+    <p> Fluctuation analysis of motor speed </p>
+        <img src=" assetsMCB/SamuelBergdata.png " >
+        <p style="font-size:20px"> Samuel and Berg, 1995 </p> 
+    </div>
+</section>
+
+<section>
+    <div  style="position: absolute; top: 30px; left: 5%; width: 90%;">
+        <p> Small speed fluctuations &#8594 many steps </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
+        <p > <small>
+            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+        </small> </p>
+        <p > <small>
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+        </small> </p>
+        <p > <small>
+            \[ \left< n^2 \right> - \left< n \right> ^2 = \left< n \right> \]
+        </small> </p>
+        <p > <small>
+            \[ \therefore \phi=\frac{\left< \theta^2 \right> - \left< \theta \right> ^2}{\left< \theta \right>} \]
+        </small> </p>
+    </div>
+</section>
+</section>
+
+<section>
+
+<section data-background="#FFFFFF">
+    <p> Cryo-EM of the rotor</p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsOxbridge/scheme.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <img src="assets/cryoEMrotor.png" width="50%">
+        <img src="assetsOxbridge/cring.png" width="80%">
+        </div>
+    </div>
+            <p style="font-size:20px"> <span style="color:gray"> Deme et al 2020, Tan et al 2021, Johnson et al., 2024 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Cryo-EM of the stator</p>
+    <div class="row">
+        <div class="column left">
+            <img src="assetsOxbridge/scheme.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assets/LeaStator.png" width="60%">
+        </div>
+    </div>
+            <p style="font-size:20px"> <span style="color:gray"> Deme et al 2020<br> Santiveri et al 2020 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p> ATP synthase </p>
+    <div class="row">
+        <div class="column left">
+            <img src=" assets/ATPsynthasestructure.png " width="70%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <br>
+	    <video loop controls='true' width='100%' height='100%' src="assetsAmsterdam/ATPsynthase.mp4" type='video/mp4' data-autoplay></video>
+        </div>
+    </div>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p>Proton-driven rotation</p>
+       <img src="assetsOxbridge/Hosu1A.png" width='60%'>
+</section>
+
+<section data-background="#FFFFFF">
+    <p>5:2 stoichiometry </p>
+       <img src="assetsOxbridge/Hosu1B.png" width='80%'>
+</section>
+
+<section data-background="#FFFFFF">
+    <p>Switching gears?</p>
+       <img src="assetsOxbridge/Hosu1C.png" width='80%'>
+</section>
+</section>
+
+<section data-background="#FFFFFF">
+    <p style="font-size:25px"> Polarized photobleaching &#8594; polarization-dependent fluorescence </p> 
+        <img src="assets/polarizationmethod.png" width='60%'>
+            <p style="font-size:20px"> <span style="color:gray"> Hosu et al 2017 </span> </p> 
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> MotB stalk fused to YFP </p> 
+    <div class="row">
+        <div class="column right">
+        <img src="assetsOxbridge/MotBdesignoutput.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column left">
+	    <video loop controls='true' width='100%' height='100%' src="assetsOxbridge/Movie_1.mp4" type='video/mp4' data-autoplay></video>
+        </div>
+    </div>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> Labeled MotB dimer with unlabeled MotA pentamer </p> 
+        <video loop controls='true' width='50%' height='50%' src="assetsOxbridge/Movie_2.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Labeled MotA pentamer with unlabeled MotB dimer </p> 
+        <video loop controls='true' width='50%' height='50%' src="assetsOxbridge/Movie_3.mp4" data-autoplay></video>
+</section>
+</section>
+
+<section>
+<section data-background="#000000">
+    <p> Synchronizing signals </p> 
+        <video loop controls='true' width='100%' height='100%' src="assetsOxbridge/Movie_4.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Experimental setup </p> 
+        <img src="assetsPolarization/experimentalsetup.png" width="80%">
+</section>
+</section>
+
+<!-- MotB Model  -->
+<section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Following MotB (stalk) fluorescence </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/ar.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Polarized photobleaching </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/br.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Cell rotates </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/cr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Unbleached MotB fluoresces </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/dr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Reaches maximum at 90&#176;</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/er.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Cell rotates </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/fr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Cell rotates </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/gr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Reaches minimum at 180&#176;</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/hr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Recovers...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/tr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/ir.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/jr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/kr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/lr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/mr.png" width='80%'>
+    </div>
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/nr.png" width='80%'>
+    </div>
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/or.png" width='80%'>
+    </div>
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/pr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/qr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/rr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/sr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/tr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/ur.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/vr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/wr.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> And so on...</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="A" src="assetsPolarization/gabrielmovie/xr.png" width='80%'>
+    </div>
+</section>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> MotB (stalk) rotation is locked to the cell </p> 
+        <img src="assetsOxbridge/Hosu2C.png" width="50%">
+    <p> <small> Two MotB fluorescence cycles for every rotation cycle </small> </p> 
+    <p> <small> <span style="color:black"> MotB fluorescence cycle is <span style="color:blue"> 1.9 &pm; 0.2 &times;  </span> faster than motor rotation cycle  </span> </small> </p> 
+</section>
+
+
+<!-- Meister Caplan Model  -->
+
+<section>
+<section data-background="#FFFFFF">
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> How does MotA move? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img src="assetsPolarization/motBcontrol/meistercaplanberg.png" width="80%">
+        <img src="assetsPolarization/motBcontrol/meistercaplanbergdata.png" width="50%">
+    </div>
+</section>
+</section>
+
+<!-- MotA Stepping -->
+
+<section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Stepping?  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBcontrol/motBnorotation.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Stepping?  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBcontrol/motBtwosteps.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Stepping?  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBcontrol/motBthreesteps.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Stepping? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBcontrol/motBfoursteps.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Stepping? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBcontrol/motB5steps.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Stepping? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBcontrol/motB6steps.png" width='80%'>
+    </div>
+</section>
+</section>
+
+
+<!-- MotA Rotating -->
+
+<section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Spinning?  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB0tumble.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Spinning?  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB2tumble.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Spinning?  </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB3tumble.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Spinning? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB4tumble.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Spinning? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB5tumble.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p> Spinning? </p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB6tumble.png" width='80%'>
+    </div>
+</section>
+<section data-background="#FFFFFF" data-auto-animate data-auto-animate-unmatched="fade" >
+    <div  style="position: absolute; top: 20px; left: 10%; width: 70%;">
+        <p style="font-size:35px"> One cell rotation &#8594  <br>
+                (gear ratio + 1) MotA rotations<br>
+                2x(gear ratio + 1) fluorescence cycles </p>
+</p>
+    </div>
+    <div  style="position: absolute; top: 90px; left: 10%; width: 70%;">
+        <img data-id="B" src="assetsPolarization/motBtumble/motB6tumble.png" width='80%'>
+    </div>
+</section>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> MotA spins <em> much  </em> faster than the cell </p> 
+        <img src="assetsOxbridge/Hosu2D.png" width="50%">
+    <p> <small> <span style="color:black"> MotA fluorescence cycle is <span style="color:blue"> 14.4 &pm; 1.1 &times;  </span> faster than motor rotation cycle  </span> </small> </p> 
+    <p> <small> Gear ratio &#8594 6.2 </small> </p> 
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Interlocking gear ratio &#8594 34/5 </p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsOxbridge/scheme.png" width="48%">
+        <img src="assetsOxbridge/cring.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <img src="assets/LeaStator.png" width="60%">
+        </div>
+    </div>
+</section>
+<!-- Signal transduction  -->
+<section>
+    <p> Part 2: Signal transduction </p> 
+</section>
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assetsMCB/tetheredcells.mp4 " data-autoplay></video>
+        <p align="center" style="font-size:20px">  
+<em> "If bacterial flagella rotate, the structures at the base of the flagellum <br> deserve more attention than they have received thus far."  </em> <br>
+            <span style="color:gray"> Berg and Brown, 1972  </span> 
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Impulse response </p> 
+        <img src="assetsMCB/BergPhysicist2.png" width="50%">
+        <p align="center" style="font-size:20px">  
+            <p align="center" style="font-size:20px;color:black"> Small change in 'bound receptor' (0.0042) &#8594  Large change in bias (0.23) <br><br>
+            <span style="color:gray"> Block, Segall, and Berg, 1982  </span> 
+        </p>
+</section>
+
+<section data-background="#DCDCDC">
+    <p> Signal transduction </p> 
+        <img src="assets/Alon1.png" width="40%">
+        <p align="center" style="font-size:20px">  
+            increase [cheY-P] &#8594 increase CW bias <br>
+            decrease [cheY-P] &#8594 decrease CW bias <br>
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Seeing signals </p> 
+        <img src="assets/SourjikFret.png" width="80%">
+        <p style="font-size:20px"> <span style="color:gray"> Sourjik and Berg, 2002 </span> </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Ultrasensitivity </p> 
+        <img src="assetsAmsterdam/ultrasensitivecluzel.png" width="40%">
+            <p style="font-size:20px"> <span style="color:gray"> Cluzel et al. 2000 </span> </p>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Sending signals?</p> 
+        <img src="assetsAmsterdam/BoydenOptogenetics.png" width="50%">
+        <p style="font-size:20px"> <span style="color:gray"> Boyden, 2012 </span> </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Sending signals?</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinghighbias.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with high bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Sending signals?</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinglowbiaspng.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Sending signals?</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/startinglow.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> Start with low bias </p> 
+</section>
+
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Sending signals?</p> 
+        <img data-id="hightolowfigure" src="assetsAmsterdam/endinghigh.png" width="40%"> 
+        <p data-id="hightolowtext" style="font-size:25px"> <span style="color:blue"> <em> Flash   </em> </span> &#8594  End with high bias </p> 
+</section>
+</section>
+
+
+<section>
+<section data-background="#000000">
+    <p> <em> Avena sativa </em> </p> 
+        <img src="assetsAlina/avenasativa.jpeg" width="50%">
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Phototropin 1 </p> 
+        <img data-id="folding" src="assetsAlina/folded2.png" width="50%"> 
+        <p align="center" style="font-size:25px">  Unlit state </p> 
+</section>
+<section data-background="#FFFFFF" data-auto-animate>
+    <p> Phototropin 1 </p> 
+        <img data-id="folding" src="assetsAlina/unfolded.png" width="50%"> 
+        <p align="center" style="font-size:25px">  Lit state </p> 
+</section>
+</section>
+
+
+<section>
+
+<section data-background="#FFFFFF">
+    <p> AlphaFold </p> 
+        <img src="assetsOxbridge/Alina1B.jpg" width="40%">
+</section>
+
+<section>
+    <video loop controls='true' width='50%' height='50%' src=" assets/output.mp4 " data-autoplay></video>
+</section>
+
+<section data-background="#FFFFFF">
+        <img src="assetsOxbridge/Alina1C.jpg" width="60%">
+        <p style="font-size:25px"> Blue light &#8594 uncaging &#8594 active CheY </p> 
+        <p style="font-size:25px"> Dark &#8594 re-caging &#8594 inactive CheY </p> 
+</section>
+
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+    <p> Optogenetic impulse response </p> 
+        <img src="assetsAlina/pulsetrain.png" width="100%">
+</section>
+
+<section data-background="#FFFFFF">
+        <img src="assetsOxbridge/Alina3A.jpg" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic impulse response </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assetsAlina/impulseresponse.png" width="100%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <img src="assets/Alon1.png" width="100%">
+        </div>
+    </div>
+</section>
+</section>
+
+<section>
+<section data-background="#FFFFFF">
+        <img src="assetsAlina/hecht.png" width="60%">
+        <img src="assetsAlina/apparatus.png" width="40%">
+        <p align="center" style="font-size:20px">  Large number of potential photon/rhodopsin quantal responses:&nbsp;&nbsp;  $N$ <br><br>
+Small probability of success for each potential response: &nbsp;&nbsp;&nbsp; $p$<br><br>
+Number of `successful' quantal responses in each trial: &nbsp;&nbsp; $n = pN $<br><br>
+$n \lll N$ &nbsp;&nbsp;&nbsp;&nbsp; &#8594 &nbsp;&nbsp;&nbsp;&nbsp;  <em> We can use Poisson statistics  </em> </p> 
+
+</section>
+<section data-background="#FFFFFF">
+    <p> Poisson statistics</p>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsAlina/probabilityofseeingcurves.png" width="100%">
+        </div>
+        <div class="column right">
+                <p align="left" style="font-size:20px"> Let $a$ be the average number of quantal responses per flash </p>
+                <p align="left" style="font-size:20px"> Poisson statistics gives the probability that the flash yields exactly $n$ quanta: \[ P_n = \frac{a^n e^{-a}}{n!} \] </p>
+                <p align="left" style="font-size:20px"> The Probability of Seeing is the probability that the number of quanta exceeds a threshold $\theta$: \[ P_{see}=\sum_{k=\theta}^{\infty} P_k \] </p>
+        </div>
+    </div>
+</section>
+<section data-background="#FFFFFF">
+    <p> Human threshold for seeing </p> 
+        <img src="assetsAlina/hechtdata.png" width="80%">
+</section>
+
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Motor threshold for seeing </p> 
+        <img src="assetsOxbridge/output.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Dissecting a circuit </p> 
+    <div class="row">
+        <div class="column left">
+        <img src="assets/Alon1.png" width="80%">
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        <img src="assetsOxbridge/Alina1B.jpg" width="100%">
+        </div>
+    </div>
+</section>
+				<section>
+					<p>Motivation</p>
+				        <p> <img src=" assetsMCB/BergLeeuwenhoek.png "> </p>
+                                        <p align="center"> <small> Curiosity is the driving force of basic science. </small> </p>
+                                        <p align="center"> <small> -Howard Berg </small> </p>
+				</section>
+
+<section>
+    <p>Acknowledgments</p>
+        <div style="position: absolute; top: 60px; left: 0%; width: 30%;">
+            <p> <img src=" assets/alina.jpg "> </p> 
+            <p> <small> Alina Vrabioiu </small> </p> 
+        </div>
+        <div style="position: absolute; top: 400px; left: 0%; width: 20%;">
+            <p> <img src="assets/nsflogotrans.png"> </p> 
+        </div>
+        <div style="position: absolute; top: 460px; left: 25%; width: 40%;">
+            <p align="left"> <small> 
+                <span style="color:yellow"> Dean's Competitive Fund, Harvard  </span> 
+            </small> </p> 
+            <p align="left"> <small> 
+                <span style="color:yellow"> Chris Stubbs, Jeff Lichtman </span> 
+            </small> </p> 
+        </div>
+
+        <div style="position: absolute; top: 60px; left: 40%; width: 20%;">
+            <p> <img src=" assets/gabrielhosu.jpg "> </p> 
+            <p> <small> Gabriel Hosu </small> </p> 
+        </div>
+            <div style="position: absolute; top: 60px; left: 70%; width: 30%;">
+            <p align="left">  <small>
+                <span style="color:yellow"> Team fly </span> <br>
+                David Zimmerman<br>
+                Stan Lazopulo<br><br>
+                <span style="color:yellow"> Team worm </span> <br>
+                Helena Casademunt<br>
+                Ishaan Chandok<br><br>
+                <span style="color:yellow"> Team undergrad </span> <br>
+                Rafael Jacobsen<br>
+                Rahm Bharara<br><br><br>
+    </small> </p> 
+    </div>
+</section>
+
+
+<section>
+<section data-background="#FFFFFF">
+    <p> CheY inactivation by sequestration </p> 
+        <img src="assetsAlina/CAD.png" width="40%">
+        <p align="center" style="font-size:25px">  
+            In the `lit' state, AsLOV2 binds to PDZ        <br>
+CAD forms a dodecameric sequestration scaffold <br>
+        </p>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic switching <br> from CW &#8594 CCW rotation </p> 
+        <img src="assetsAlina/seqtrials.jpg" width="60%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Optogenetic switching <br> from CW &#8594 CCW rotation </p> 
+        <img src="assetsAlina/responsecurveseq.jpg" width="60%">
+</section>
+</section>
+
+<section data-background="#FFFFFF">
+    <p> Measuring the response curve <br> with long-lived probes </p> 
+        <img src="assetsAlina/activemeasurement.png" width="60%">
+</section>
+
+</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
