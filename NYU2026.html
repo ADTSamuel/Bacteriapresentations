@@ -161,13 +161,13 @@ tr:hover {background-color: gray;}
     </div>
     <div  style="position: absolute; top: 90px; left: 15%; width: 70%;">
         <p > <small>
-            \[ \left< \theta \right> = \phi \times \left< n \right> \]
+            \[ \left< \theta \right> = \phi \times \left< k \right> \]
         </small> </p>
         <p > <small>
-            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< n^2 \right> - \left< n \right> ^2 \right) \]
+            \[ \left< \theta^2 \right> - \left< \theta \right>^2 = \phi^2 \times \left( \left< k^2 \right> - \left< k \right> ^2 \right) \]
         </small> </p>
         <p > <small>
-            \[ \left< n^2 \right> - \left< n \right> ^2 = \left< n \right> \]
+            \[ \left< k^2 \right> - \left< k \right> ^2 = \left< k \right> \]
         </small> </p>
         <p > <small>
             \[ \therefore \phi=\frac{\left< \theta^2 \right> - \left< \theta \right> ^2}{\left< \theta \right>} \]
@@ -820,8 +820,8 @@ tr:hover {background-color: gray;}
         <img src="assetsAlina/apparatus.png" width="40%">
         <p align="center" style="font-size:20px">  Large number of potential photon/rhodopsin quantal responses:&nbsp;&nbsp;  $N$ <br><br>
 Small probability of success for each potential response: &nbsp;&nbsp;&nbsp; $p$<br><br>
-Number of `successful' quantal responses in each trial: &nbsp;&nbsp; $n = pN $<br><br>
-$n \lll N$ &nbsp;&nbsp;&nbsp;&nbsp; &#8594 &nbsp;&nbsp;&nbsp;&nbsp;  <em> We can use Poisson statistics  </em> </p> 
+Mean number of `successful' quantal responses in each trial: &nbsp;&nbsp; $\mu = pN $<br><br>
+$\mu \lll N$ &nbsp;&nbsp;&nbsp;&nbsp; &#8594 &nbsp;&nbsp;&nbsp;&nbsp;  <em> We can use Poisson statistics  </em> </p> 
 
 </section>
 <section data-background="#FFFFFF">
@@ -831,9 +831,9 @@ $n \lll N$ &nbsp;&nbsp;&nbsp;&nbsp; &#8594 &nbsp;&nbsp;&nbsp;&nbsp;  <em> We can
         <img src="assetsAlina/probabilityofseeingcurves.png" width="100%">
         </div>
         <div class="column right">
-                <p align="left" style="font-size:20px"> Let $a$ be the average number of quantal responses per flash </p>
-                <p align="left" style="font-size:20px"> Poisson statistics gives the probability that the flash yields exactly $n$ quanta: \[ P_n = \frac{a^n e^{-a}}{n!} \] </p>
-                <p align="left" style="font-size:20px"> The Probability of Seeing is the probability that the number of quanta exceeds a threshold $\theta$: \[ P_{see}=\sum_{k=\theta}^{\infty} P_k \] </p>
+                <p align="left" style="font-size:20px"> Let $\mu$ be the average number of quantal responses per flash </p>
+                <p align="left" style="font-size:20px"> Poisson statistics gives the probability that the flash yields exactly $k$ quanta: \[ P_k = \frac{\mu^n e^{-\mu}}{n!} \] </p>
+                <p align="left" style="font-size:20px"> The Probability of Seeing is the probability that the number of quanta exceeds a threshold $n$: \[ P_{see}=\sum_{k=n}^{\infty} P_k \] </p>
         </div>
     </div>
 </section>
@@ -885,14 +885,6 @@ $n \lll N$ &nbsp;&nbsp;&nbsp;&nbsp; &#8594 &nbsp;&nbsp;&nbsp;&nbsp;  <em> We can
 </section>
 
 
-
-				<section>
-					<p>Motivation</p>
-				        <p> <img src=" assetsMCB/BergLeeuwenhoek.png "> </p>
-                                        <p align="center"> <small> Curiosity is the driving force of basic science. </small> </p>
-                                        <p align="center"> <small> -Howard Berg </small> </p>
-				</section>
-
 <section>
     <p>Acknowledgments</p>
         <div style="position: absolute; top: 60px; left: 0%; width: 30%;">
@@ -923,9 +915,7 @@ $n \lll N$ &nbsp;&nbsp;&nbsp;&nbsp; &#8594 &nbsp;&nbsp;&nbsp;&nbsp;  <em> We can
                 <span style="color:yellow"> Team worm </span> <br>
                 Helena Casademunt<br>
                 Ishaan Chandok<br><br>
-                <span style="color:yellow"> Team undergrad </span> <br>
                 Rafael Jacobsen<br>
-                Rahm Bharara<br><br><br>
     </small> </p> 
     </div>
 </section>
